@@ -1,8 +1,0 @@
-SFML_INCLUDE_PATH=../SFML-2.0/include
-SFML_LINK_PATH=../SFML-2.0/lib
-
-tutorial:	main.cpp
-	@g++ -c -I${SFML_INCLUDE_PATH} main.cpp
-	@g++ main.o -o sfml-app -L${SFML_LINK_PATH} -lsfml-graphics -lsfml-window -lsfml-system
-	@	rm -rf *.o
-	@echo "Make sure to export LD_LIBRARY_PATH to the path to SMFL-2.0/lib"
