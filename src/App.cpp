@@ -1,25 +1,39 @@
 #include "../include/App.h"
 
-App::App(sf::RenderWindow *window){
-  m_window = window;
-}
+namespace DAN{
+  App::App(sf::RenderWindow *window){
+    m_window = window;
+  }
 
-void App::onInit(){
+  void App::onInit(){
+    
+  }
+  
+  void App::run(){
+    onInit();
 
-}
+    loop();
+  }
 
-void App::run(){
-  onInit();
-
-  while(m_window->isOpen()){
-
-    //poll Events
-
-    //render
+  void App::loop(){
+    while(m_window->isOpen()){
+      
+      pollEvents();
+      
+      render();
+      
+    }
+  }
+  
+  void App::pollEvents(){
+    
+  }
+  
+  void App::render(){
+    
+  }
+  
+  App::~App(){
 
   }
-}
-
-App::~App(){
-
 }
