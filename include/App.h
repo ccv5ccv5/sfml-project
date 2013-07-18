@@ -5,6 +5,9 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 
+#include "BasicEntity.h"
+#include "CircleEntity.h"
+
 using namespace std;
 
 namespace DAN {
@@ -25,27 +28,32 @@ namespace DAN {
     void run();
     
     // Initializes necessary items at start of the App
-    void onInit();
+    virtual void onInit();
 
     // Does whatever is necessary upon closing the window
-    void onClose();
+    virtual void onClose();
 
     // Does whatever is necessary upon exit of the App
-    void onExit();
+    virtual void onExit();
     
     // The game loop. Calls all functions for game logic, display, etc.
     void loop();
     
     // Polls events from the window and calls appropriate functions
-    void pollEvents();
+    virtual void pollEvents();
     
+    virtual void onMousePress(sf::Event event);
+
     // Renders items to the window
-    void render();
+    virtual void render();
 
   private:
     // Pointer to the window that must be drawn
     sf::RenderWindow *m_window;
 
+    BasicEntity **m_basic;
+    int m_num_entities, m_capacity;
+    
     // Is the App currently running?
     bool m_is_running;
 
