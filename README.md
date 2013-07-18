@@ -26,6 +26,15 @@ Creating an engine for a simple Tic-Tac-Toe game.
 - Practice with writing a basic engine (render, interaction, game logic)
 - git practice
 
+##### Current Tasks #####
+- [x] Create Basic Entity super class for organizing renderable items
+- [ ] Implement Array class (with Template?)
+- [ ] Move current example code out of App.cpp into subclass
+- [ ] Create and render game board
+- [ ] Enhance example to allow circles to only be placed in certain locations
+- [ ] Create a Cross Entity
+- [ ] Determine win state (board logic?)
+
 ### Steps After Current Plan ###
 
 - Experiment with Box2D

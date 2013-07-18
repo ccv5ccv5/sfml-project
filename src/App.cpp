@@ -30,7 +30,6 @@ namespace DAN{
   }
 
   void App::onExit(){
-
     for(int i = 0; i < m_capacity; ++i){
       if(m_basic[i] != NULL) delete m_basic[i];
       m_basic[i] = NULL;
