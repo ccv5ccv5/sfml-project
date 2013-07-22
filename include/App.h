@@ -1,6 +1,13 @@
 #ifndef _APP_H_
 #define _APP_H_
 
+/**
+ *  Base App class for use in any extension of the engine.
+ *  Built using SFML 2.0.
+ *
+ *  (c)2013 Diogenes A. Nunez
+ */
+
 #include <iostream>
 #include <string>
 #include <SFML/Graphics.hpp>
@@ -41,21 +48,17 @@ namespace DAN {
     void loop();
     
     // Polls events from the window and calls appropriate functions
-    virtual void pollEvents();
+    void pollEvents();
     
-    virtual void onMousePress(sf::Event event);
+    virtual void onMousePress(sf::Event event) { }
 
     // Renders items to the window
-    virtual void render();
+    virtual void render(sf::RenderWindow *window) { }
 
   private:
     // Pointer to the window that must be drawn
     sf::RenderWindow *m_window;
 
-    Array<BasicEntity> *m_basic;
-    //BasicEntity **m_basic;
-    int m_capacity;
-    
     // Is the App currently running?
     bool m_is_running;
 

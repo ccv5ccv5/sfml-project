@@ -14,7 +14,6 @@ namespace DAN{
   void App::onInit(){
     m_window = new sf::RenderWindow(sf::VideoMode(m_width, m_height), m_title);
     m_is_running = true;
-    m_basic = new Array<BasicEntity>();
   }
   
   void App::onClose(){
@@ -23,7 +22,6 @@ namespace DAN{
   }
 
   void App::onExit(){
-    delete m_basic;
     delete m_window;
     m_window = NULL;
   }
@@ -43,7 +41,13 @@ namespace DAN{
       
       pollEvents();
       
-      if(m_is_running) render();
+      if(m_is_running){
+	m_window->clear();
+
+	render(m_window);
+
+	m_window->display();
+      }
     }
   }
   
@@ -55,27 +59,6 @@ namespace DAN{
     }
   }
 
-  void App::onMousePress(sf::Event event){
-    CircleEntity *circ = new CircleEntity(10);
-    circ->setPosition(event.mouseButton.x, event.mouseButton.y);
-    circ->setFillColor(sf::Color::Green);
-    m_basic->add(circ);
-    
-  }
-  
-  void App::render(){
-    m_window->clear();
-
-    // Insert rendering statements here
-    //for(int i = 0; i < m_num_entities && i < m_capacity; ++i){
-    for(int i = 0; i < m_basic->size(); ++i){
-      //m_window->draw(*(m_basic[i]));
-      m_window->draw(*(m_basic->get(i)));
-    }
-
-    m_window->display();
-  }
-  
   App::~App(){
     // Stop window if it is still running
     if(m_is_running && m_window != NULL) {
