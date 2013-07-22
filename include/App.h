@@ -7,6 +7,7 @@
 
 #include "BasicEntity.h"
 #include "CircleEntity.h"
+#include "../src/Array.cpp"
 
 using namespace std;
 
@@ -51,8 +52,9 @@ namespace DAN {
     // Pointer to the window that must be drawn
     sf::RenderWindow *m_window;
 
-    BasicEntity **m_basic;
-    int m_num_entities, m_capacity;
+    Array<BasicEntity> *m_basic;
+    //BasicEntity **m_basic;
+    int m_capacity;
     
     // Is the App currently running?
     bool m_is_running;
