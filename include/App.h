@@ -12,8 +12,6 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 
-#include "BasicEntity.h"
-#include "CircleEntity.h"
 #include "../src/Array.cpp"
 
 using namespace std;
