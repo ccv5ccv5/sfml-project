@@ -8,12 +8,18 @@
  */
 
 #include "../include/App.h"
+#include "../include/BasicEntity.h"
+#include "CircleEntity.h"
+#include "BoardEntity.h"
 
 using namespace DAN;
 
 class TicTacApp : public App {
  public:
- TicTacApp(int width, int height, string title) : App(width, height, title) { }
+ TicTacApp(int width, int height, string title) : App(width, height, title) { 
+    m_basic = NULL;
+    board = NULL;
+  }
   ~TicTacApp();
 
   virtual void onInit();
@@ -23,6 +29,7 @@ class TicTacApp : public App {
   virtual void render(sf::RenderWindow *window);
  
  private:
+  BoardEntity *board;
   Array<BasicEntity> *m_basic;
 };
 
