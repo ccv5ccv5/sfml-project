@@ -3,7 +3,7 @@
 using namespace DAN;
 
 int main() {
-  TicTacApp app(200, 200, "TicTacApp");
+  TicTacApp app(600, 600, "TicTacApp");
   app.run();
   return 0;
 }
