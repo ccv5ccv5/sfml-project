@@ -6,7 +6,7 @@ void TicTacApp::onInit(){
   App::onInit();
   m_basic = new Array<BasicEntity>();
 
-  board = new BoardEntity(200, 200);
+  m_board = new BoardEntity(m_width, m_height);
 }
 
 void TicTacApp::onClose(){
@@ -17,39 +17,53 @@ void TicTacApp::onExit(){
   delete m_basic;
   m_basic = NULL;
   
-  delete board;
-  board = NULL;
+  delete m_board;
+  m_board = NULL;
 
   App::onExit();
 }
 
 void TicTacApp::onMousePress(sf::Event event){
-  if(m_basic->size() == 9)
-    m_basic->remove(0);
+  //Do nothing if the game is won
+  if(m_done) return;
 
-  CircleEntity *circ = new CircleEntity(10);
-  circ->setPosition(event.mouseButton.x, event.mouseButton.y);
-  circ->setFillColor(sf::Color::Green);
-  m_basic->add(circ);
+  if(m_player % 2 == 0){
+    CircleEntity *circ = new CircleEntity(20);
+    circ->setOutlineThickness(3);
+    circ->setOutlineColor(sf::Color::Red);
+    circ->setFillColor(sf::Color::Transparent);
+
+    //If we can place the circle there, add it to the entity list
+    if(m_board->place(circ, event.mouseButton.x, event.mouseButton.y)){
+      m_basic->add(circ);
+      m_player++;
+    }
+  } else {
+    CrossEntity *cross = new CrossEntity(m_width/3.0, m_height/3.0);
+    cross->setFillColor(sf::Color::Blue);
+
+    //If we can place the cross there, add it to the entity list
+    if(m_board->place(cross, event.mouseButton.x, event.mouseButton.y)){
+      m_basic->add(cross);
+      m_player++;
+    }
+  }
+}
+
+void TicTacApp::update(){
+  int winner = m_board->winner();
+  if(winner >= 0 || winner == BoardEntity::DRAW)
+    m_done = true;
 }
 
 void TicTacApp::render(sf::RenderWindow *window){
-    // Insert rendering statements here
-  /*
-
-  
-  window->draw(piece1);
-  window->draw(piece2);
-  window->draw(piece3);
-  window->draw(piece4);
-  */
-  window->draw(*board);
-
+  //Render the crosses and circles
   for(int i = 0; i < m_basic->size(); ++i){
     window->draw(*(m_basic->get(i)));
   }
 
-    
+  //Render the board to hide any ugliness from the pieces
+  window->draw(*m_board);
 }
 
 TicTacApp::~TicTacApp() {
