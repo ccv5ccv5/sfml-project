@@ -47,6 +47,9 @@ namespace DAN {
     
     // Polls events from the window and calls appropriate functions
     void pollEvents();
+
+    // Update any and all game logic
+    virtual void update() { }
     
     virtual void onMousePress(sf::Event event) { }
 
@@ -60,6 +63,7 @@ namespace DAN {
     // Is the App currently running?
     bool m_is_running;
 
+  protected:
     // Details for the window
     int m_width, m_height;
     string m_title;

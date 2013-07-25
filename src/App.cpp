@@ -40,7 +40,8 @@ namespace DAN{
     while(m_window->isOpen()){
       
       pollEvents();
-      
+
+      update();
       if(m_is_running){
 	m_window->clear();
 
