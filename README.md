@@ -17,7 +17,7 @@ The setup tutorial I used is found [here](http://www.iforce2d.net/b2dtut/setup-l
 
 ### Current Plan ###
 
-Creating an engine for a simple Tic-Tac-Toe game.
+Creating an engine for a simple Tic-Tac-Toe game -- **COMPLETE**.
 
 #### Goals of Current Plan ####
 
@@ -31,10 +31,10 @@ Creating an engine for a simple Tic-Tac-Toe game.
 - [x] Create Basic Entity super class for organizing renderable items
 - [x] Implement Array class (with Template?)
 - [x] Move current example code out of App.cpp into subclass
-- [ ] Create and render game board
-- [ ] Enhance example to allow circles to only be placed in certain locations
-- [ ] Create a Cross Entity
-- [ ] Determine win state (board logic?)
+- [x] Create and render game board
+- [x] Enhance example to allow circles to only be placed in certain locations
+- [x] Create a Cross Entity
+- [x] Determine win state (board logic?)
 ```
 ### Steps After Current Plan ###
 
