@@ -7,25 +7,28 @@
 #include "../include/BasicEntity.h"
 
 using namespace std;
+using namespace DAN;
 
-namespace DAN {
-
-  class CircleEntity : public BasicEntity {
-  public:
-    CircleEntity(float radius);
-    void setPosition(float x, float y);
-    float getX() { return circle.getPosition().x; }
-    float getRadius() { return circle.getRadius(); }
-    void setFillColor(sf::Color c);
-
+class CircleEntity : public BasicEntity {
+ public:
+  CircleEntity(float radius);
+  void setPosition(float x, float y);
+  
+  void setRadius(float radius);
+  float getRadius() { return circle.getRadius(); }
+  
+  void setFillColor(sf::Color c);
+  void setOutlineColor(sf::Color c);
+  
+  void setOutlineThickness(float thickness);
+  float getOutlineThickness();
+  
   private:
-    sf::CircleShape circle;
-
-    virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const {
-      target.draw(circle, states);
-    }
-  };
-
-}
+  sf::CircleShape circle;
+  
+  virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const {
+    target.draw(circle, states);
+  }
+};
 
 #endif
