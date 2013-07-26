@@ -47,6 +47,14 @@ class FooTest : public Test {
 
     kinematicBody->SetLinearVelocity(b2Vec2(10, 0));
     kinematicBody->SetAngularVelocity(360 * DEGTORAD);
+
+    /*
+     * Can grab linked list of bodies of a world with
+     *   b2Body *b = m_world->GetBodyList();
+     * Can go to the next with 
+     *   b->GetNext();
+     * If pointer is NULL, list is done.
+     */
   }
 
   void Step(Settings *settings){
