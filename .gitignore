@@ -1,6 +1,15 @@
 ###########
 # Backups #
 ###########
+Box2D_v2.2.1/Box2D/*
+Box2D_v2.2.1/Build/*
+Box2D_v2.2.1/Documentation/*
+Box2D_v2.2.1/freeglut/*
+Box2D_v2.2.1/glui/*
+Box2D_v2.2.1/HelloWorld/*
+Box2D_v2.2.1/*.txt
+Box2D_v2.2.1/*.lua
+Box2D_v2.2.1/Testbed/Tests/TestEntries.cpp*
 Box2D_v2.2.1/Testbed/Tests/Tutorial/*~
 *~
 
