@@ -20,6 +20,8 @@ class BoardEntity : public BasicEntity {
   static const int NUM_ROWS = 3;
   static const int NUM_COLS = 3;
 
+  static const int PLAYER_ONE = 0;
+  static const int PLAYER_TWO = 1;
   static const int DRAW = -2;
  private:
   Array<sf::RectangleShape> *pieces;
@@ -33,8 +35,7 @@ class BoardEntity : public BasicEntity {
   static const int PLAYER_TWO_WIN = -3;
   static const int NO_WIN = -1;
 
-  static const int PLAYER_ONE = 0;
-  static const int PLAYER_TWO = 1;
+  int num_spaces;
 };
 
 #endif

@@ -22,6 +22,7 @@ class TicTacApp : public App {
     m_board = NULL;
     m_player = 0;
     m_done = false;
+    m_title = title;
   }
   
   ~TicTacApp();
@@ -39,6 +40,8 @@ class TicTacApp : public App {
 
   int m_player;
   bool m_done;
+
+  string m_title;
 };
 
 #endif

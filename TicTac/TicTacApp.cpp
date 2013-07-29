@@ -54,9 +54,19 @@ void TicTacApp::update(){
   int winner = m_board->winner();
   if(winner >= 0 || winner == BoardEntity::DRAW)
     m_done = true;
+  if(winner == BoardEntity::PLAYER_ONE)
+    m_title = "Player 1 wins!";
+  else if (winner == BoardEntity::PLAYER_TWO)
+    m_title = "Player 2 wins!";
+  else if (winner == BoardEntity::DRAW)
+    m_title = "Draw!";
 }
 
 void TicTacApp::render(sf::RenderWindow *window){
+  //Change the title of the window when the game is over
+  if(m_done)
+    window->setTitle(m_title);
+
   //Render the crosses and circles
   for(int i = 0; i < m_basic->size(); ++i){
     window->draw(*(m_basic->get(i)));

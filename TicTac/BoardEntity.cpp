@@ -6,6 +6,7 @@ BoardEntity::BoardEntity(float width, float height){
   }
 
   pieces = new Array<sf::RectangleShape>();
+  num_spaces = NUM_SPACES;
 
   //create the visible board
   sf::RectangleShape *piece;
@@ -46,6 +47,7 @@ bool BoardEntity::place(CircleEntity *circ, int x, int y){
 
 	  circ->setPosition(position.x + thickness, 
 			    position.y + thickness);
+	  num_spaces--;
 	  return true;
 	}
       }
@@ -73,6 +75,7 @@ bool BoardEntity::place(CrossEntity *cross, int x, int y){
 	  board[i] = CROSS;
 
 	  cross->setPosition(position.x, position.y);
+	  num_spaces--;
 	  return true;
 	}
       }
@@ -111,12 +114,16 @@ int BoardEntity::winner(){
       return PLAYER_TWO;
 
   winner = board[2] + board[4] + board[6];
-    if(winner == PLAYER_ONE_WIN)
-      return PLAYER_ONE;
-    if(winner == PLAYER_TWO_WIN)
-      return PLAYER_TWO;
-
-    return NO_WIN;
+  if(winner == PLAYER_ONE_WIN)
+    return PLAYER_ONE;
+  if(winner == PLAYER_TWO_WIN)
+    return PLAYER_TWO;
+  
+  //If there are no spaces left, but no one won,
+  //it must be a draw
+  if(num_spaces == 0)
+    return DRAW;
+  return NO_WIN;
 }
 
 void BoardEntity::draw(sf::RenderTarget &target, sf::RenderStates states) const {
