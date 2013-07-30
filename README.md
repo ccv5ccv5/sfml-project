@@ -2,7 +2,7 @@
 
 No idea what will come out of this, but it is something to kill the time.
 
-If anyone wants to use these files, they will need to build or download SFML-2.0 and Box2Dthemeselves.
+If anyone wants to use these files, they will need to build or download SFML-2.0 and Box2D themeselves.
 Just to note, one needs knowledge of C++ to use SFML and this version of Box2D.
 
 ---
