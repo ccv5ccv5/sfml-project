@@ -83,8 +83,6 @@ class Ball4 {
       }
     }
     glEnd();
-
-
   }
 
   void renderAtBodyPosition(){
