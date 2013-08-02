@@ -28,7 +28,8 @@ The setup tutorial I used is found [here](http://www.iforce2d.net/b2dtut/setup-l
 ---
 ### Current Plan ###
 
-Follow the tutorial of Box2D (linked above)
+- Follow the tutorial of Box2D (linked above)
+  - Also read through this [post](http://buildnewgames.com/2d-platformer-character-movement/) on character movement
 
 #### Goals of Current Plan ####
 
