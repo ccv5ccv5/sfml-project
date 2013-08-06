@@ -18,6 +18,11 @@ Box2D can be found [here](https://code.google.com/p/box2d/). I am currently usin
 The setup tutorial I used is found [here](http://www.iforce2d.net/b2dtut/setup-linux). It also contains links for setup on Windows and Mac.
 
 ---
+### Qt ###
+
+Might look into Qt, which can be found [here](http://qt-project.org/) to familiarize myself with other UI frameworks.
+
+---
 ### Completed Plans ###
 
 - Creating an engine for a simple Tic-Tac-Toe game -- **COMPLETE**.
