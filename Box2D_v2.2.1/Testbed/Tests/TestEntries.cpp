@@ -91,10 +91,12 @@ using namespace std;
 #include "Tutorial/RayCastTut.h"
 #include "Tutorial/AABBTut.h"
 #include "Tutorial/DestroyBodyTut.h"
+#include "Tutorial/CanJumpTest.h"
 
 TestEntry g_testEntries[] =
 {
 	//Custom tests start here
+        {"Can Jump Test", CanJumpTest::Create},
         {"DestroyBodyTut", DestroyBodyTut::Create},
         {"AABB Tut", AABBTut::Create},
         {"Ray Cast Tut", RayCastTut::Create},
