@@ -92,10 +92,18 @@ using namespace std;
 #include "Tutorial/AABBTut.h"
 #include "Tutorial/DestroyBodyTut.h"
 #include "Tutorial/CanJumpTest.h"
+#include "Tutorial/iforce2d_ghost_vertices.h"
+#include "Tutorial/JointRevoluteTest.h"
+#include "Tutorial/ChainTut.h"
+#include "Tutorial/JointPrismaticTest.h"
 
 TestEntry g_testEntries[] =
 {
 	//Custom tests start here
+        {"Joint Prismatic Test", JointPrismaticTest::Create},
+        {"Chain Test", ChainTut::Create},
+        {"Joint Revolute Test", JointRevoluteTest::Create},
+        {"Ghost Vertices Test", iforce2d_ghost_vertices::Create},
         {"Can Jump Test", CanJumpTest::Create},
         {"DestroyBodyTut", DestroyBodyTut::Create},
         {"AABB Tut", AABBTut::Create},
