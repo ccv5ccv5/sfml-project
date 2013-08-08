@@ -44,7 +44,7 @@ Might look into Qt, which can be found [here](http://qt-project.org/) to familia
 
 ##### Current Tasks #####
 ```
-- [ ] Complete the basic tutorial
+- [x] Complete the basic tutorial
 - [ ] Set up an interesting test based on tutorial
 ```
 ---
